@@ -1,6 +1,6 @@
 "use client"
 import "./globals.css"
-import MainPage from "@/components/Main/MainPage";
+import MainPage from "@/components/main/MainPage";
 import Navbar from "@/components/Navbar";
 import Sidebar from "@/components/Sidebar";
 import { useEffect, useState } from "react";
