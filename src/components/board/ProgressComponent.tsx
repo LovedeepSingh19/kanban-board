@@ -132,7 +132,7 @@ const ProgressComponent: React.FC<ProgressComponentProps> = () => {
             </div>
             <div className="text-[#ffffff] hover:cursor-pointer items-center justify-center ml-[130px] flex pt-2 pb-2 pl-3 pr-3 rounded-xl bg-selected">
               <IoMdPersonAdd />
-              <text className="pl-2 text-[13px]">Invite People</text>
+              <text className="truncate pl-2 text-[13px]">Invite People</text>
             </div>
             <div className="text-[#ffffff] hover:cursor-pointer items-center justify-center ml-3 flex p-2 rounded-xl bg-theme border-solid border-[0.5px] border-items">
               <text className="pl-3 pr-3 text-[12px]">Private</text>
@@ -140,13 +140,13 @@ const ProgressComponent: React.FC<ProgressComponentProps> = () => {
             <div className="text-[#ffffff] hover:cursor-pointer items-center justify-center ml-3 flex pt-2 pb-2 pl-3 pr-3  rounded-xl bg-items">
               <text className="pl-2 pr-2 text-[13px]">Edit</text>
             </div>
-            <div className="text-[#ffffff] hover:cursor-pointer items-center justify-center ml-3 flex p-2 rounded-xl bg-theme border-solid border-[0.5px] border-items">
+            <div className="truncate text-[#ffffff] hover:cursor-pointer items-center justify-center ml-3 flex p-2 rounded-xl bg-theme border-solid border-[0.5px] border-items">
               <TfiCommentAlt className="text-[12px]" />
               <text className="pl-2 text-[12px]">45 Coments</text>
             </div>
           </div>
           <div className= "flex items-start justify-start pt-1">
-                <div className="text-[#ffff] pr-3 pt-1 text-xs">Total Progerss 60%</div>
+                <div className="text-[#ffff] pr-3 pt-1 pl-2 text-xs">Total Progerss 60%</div>
             <div className="my-2 h-2 w-[200px] bg-[#1E1C3A] overflow-hidden rounded-md">
               <div
                 style={{
