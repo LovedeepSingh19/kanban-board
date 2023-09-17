@@ -4,7 +4,7 @@ import Navbar from "@/components/Navbar";
 import Sidebar from "@/components/Sidebar";
 import { useEffect, useState } from "react";
 import { useMediaQuery } from "react-responsive";
-import KanbanBoard from "@/components/kanban/KanbanBoard";
+import KanbanBoard from "@/components/board/KanbanBoard";
 import KanbanContextComponent from "@/context/KanbanContextComponent";
 
 export default function Home() {

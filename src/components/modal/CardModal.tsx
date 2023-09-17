@@ -9,7 +9,7 @@ import {
 } from "@heroicons/react/24/outline";
 import KanbanContext from "../../context/kanbanContext";
 import useAutosizeTextArea from "../../hooks/useAutosizeTextarea";
-import { KanbanCard } from "../kanban/KanbanTypes";
+import { KanbanCard } from "../board/KanbanTypes";
 import Datepicker from "react-tailwindcss-datepicker";
 import { DateValueType } from "react-tailwindcss-datepicker/dist/types";
 import { classNames } from "../../utility/css";

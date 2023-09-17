@@ -8,7 +8,7 @@ import {
   KanbanContextProvider,
 } from "./kanbanContext";
 import { hanbleOpenModalProps, ModalContextState } from "./KanbanContextTypes";
-import { KanbanBoardState, KanbanCard } from "@/components/kanban/KanbanTypes";
+import { KanbanBoardState, KanbanCard } from "@/components/board/KanbanTypes";
 import CardModal from "@/components/modal/CardModal";
 
 type KanbanContextComponentProps = {

@@ -1,6 +1,6 @@
 import { DropResult } from "react-beautiful-dnd";
 import { CardModalProps } from "../components/modal/CardModal";
-import { KanbanBoardState, KanbanCard } from "@/components/kanban/KanbanTypes";
+import { KanbanBoardState, KanbanCard } from "@/components/board/KanbanTypes";
 
 export type ModalTypes = "UPDATE_CARD";
 

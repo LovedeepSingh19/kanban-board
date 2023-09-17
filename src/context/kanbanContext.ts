@@ -3,7 +3,7 @@ import { tagColors } from "../components/modal/CreateTagModal";
 // import { GetBaseURL } from "../utility/baseUrl";
 import { s4 } from "../utility/uuidGenerator";
 import { KanbanContext, ModalContextState } from "./KanbanContextTypes";
-import { KanbanBoardState } from "@/components/kanban/KanbanTypes";
+import { KanbanBoardState } from "@/components/board/KanbanTypes";
 export const defaultKanbanBoardState: KanbanBoardState = [
   {
     id: s4(),
