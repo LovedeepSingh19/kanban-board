@@ -52,22 +52,22 @@ const CreatePeopleModal:React.FC<CreatePeopleModalProps> = (props) => {
               as={Fragment}
               enter="ease-out duration-300"
               enterFrom="opacity-0 scale-95"
-              enterTo="opacity-100 scale-100"
+              enterTo="opacity-100 scale-100 bg-theme"
               leave="ease-in duration-200"
-              leaveFrom="opacity-100 scale-100"
+              leaveFrom="opacity-100 scale-100 bg-theme"
               leaveTo="opacity-0 scale-95"
             >
-              <Dialog.Panel className="w-full max-w-sm transform overflow-hidden rounded-2xl bg-white p-6 text-left align-middle shadow-xl transition-all :bg-slate-900">
+              <Dialog.Panel className="w-full max-w-sm transform overflow-hidden rounded-2xl bg-white p-6 text-left align-middle shadow-xl transition-all bg-components">
                 <Dialog.Title
                   as="h3"
-                  className="text-lg font-medium leading-6 text-slate-900 :text-white"
+                  className="text-lg font-medium leading-6 text-[#ffff]"
                 >
                   Create People
                 </Dialog.Title>
                 <div className="mt-3">
                   <input
                     type="text"
-                    className="w-full rounded-lg font-semibold placeholder:font-light :bg-slate-900 :text-white :placeholder:text-slate-400 :hover:border"
+                    className="w-full rounded-lg font-semibold placeholder:font-light bg-components text-[#ffff] placeholder:text-slate-400 hover:border"
                     placeholder="People name...."
                     value={name}
                     onChange={(e) => setName(e.target.value)}
@@ -102,7 +102,7 @@ const CreatePeopleModal:React.FC<CreatePeopleModalProps> = (props) => {
                 <div className="mt-4 flex justify-end gap-3">
                   <button
                     type="button"
-                    className="inline-flex justify-center rounded-md border border-transparent bg-emerald-700 px-3 py-1 text-base font-medium text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 hover:bg-emerald-600"
+                    className="inline-flex justify-center rounded-md border border-transparent bg-components px-3 py-1 text-base font-medium text-[#ffff] focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 "
                     onClick={() => handleCreate(name, color)}
                   >
                     Create
@@ -110,7 +110,7 @@ const CreatePeopleModal:React.FC<CreatePeopleModalProps> = (props) => {
                   <button
                     onClick={() => props.handleClose(false)}
                     type="button"
-                    className="inline-flex justify-center rounded-md border bg-transparent px-3 py-1 text-base font-medium transition-colors duration-150 focus:outline-none focus:ring-1 focus:ring-indigo-600 hover:border-indigo-600 hover:ring-1 hover:ring-indigo-600 :text-white"
+                    className="inline-flex justify-center rounded-md border bg-components px-3 py-1 text-base font-medium transition-colors duration-150 focus:outline-none focus:ring-1 hover:ring-1 text-[#ffff]"
                   >
                     Cancel
                   </button>

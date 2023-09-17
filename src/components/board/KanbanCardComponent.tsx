@@ -8,16 +8,18 @@ import { Draggable } from "react-beautiful-dnd";
 import KanbanContext from "../../context/kanbanContext";
 import { classNames } from "../../utility/css";
 import { KanbanCard } from "./KanbanTypes";
+import { BsClock } from "react-icons/bs";
 
 type KanbanCardComponentProps = {
   listIndex: number;
   cardIndex: number;
   card: KanbanCard;
-  isOpen: boolean
+  isOpen: boolean;
 };
 
 const KanbanCardComponent: React.FC<KanbanCardComponentProps> = (props) => {
   const { handleOpenModal } = useContext(KanbanContext);
+  const len = props.card.desc;
 
   const calculateTaskPercentage = () => {
     const totalTasks = props.card.tasks.length;
@@ -34,7 +36,9 @@ const KanbanCardComponent: React.FC<KanbanCardComponentProps> = (props) => {
     <Draggable draggableId={props.card.id} index={props.cardIndex}>
       {(provided) => (
         <div
-          className={`mb-3 ${props.isOpen? "w-[320px]": "w-[250px]"} z-10 rounded-lg bg-components shadow-sm transition-shadow duration-200 ease-in-out focus:outline-none focus:ring hover:shadow-lg hover:ring-0 text-[#aba8a8] hover:shadow-slate-800/60`}
+          className={`mb-3 pb-2 ${
+            props.isOpen ? "w-[320px]" : "w-[250px]"
+          } z-10 rounded-lg bg-components  shadow-sm transition-shadow duration-200 ease-in-out focus:outline-none focus:ring hover:shadow-lg hover:ring-0 text-[#aba8a8] hover:shadow-slate-800/60`}
           {...provided.draggableProps}
           {...provided.dragHandleProps}
           ref={provided.innerRef}
@@ -57,10 +61,10 @@ const KanbanCardComponent: React.FC<KanbanCardComponentProps> = (props) => {
               />
             </div>
           )}
-          <div className="p-4">
+          <div className="p-5">
             <div className="flex items-center justify-between gap-5">
               <div className="flex justify-evenly items-center">
-                <div className="w-1.5 h-1.5 bg-pink rounded-full"></div>
+                <div className="w-1.5 h-1.5 ml-1 bg-pink rounded-full"></div>
                 <span
                   className={`text-pink flex-wrap ${
                     props.card.completed ? "w-[100px]" : "w-full"
@@ -69,12 +73,6 @@ const KanbanCardComponent: React.FC<KanbanCardComponentProps> = (props) => {
                   {props.card.title}
                 </span>
               </div>
-
-              {/* {!props.card.completed && props.card.tasks.length > 0 && (
-                  <div>{`${calculateTaskCompleted()}/${
-                    props.card.tasks.length
-                  }`}</div>
-                )} */}
               <div className="flex justify-around">
                 {props.card.completed && (
                   <CheckCircleIcon className="h-5 w-5 mr-3" />
@@ -97,6 +95,13 @@ const KanbanCardComponent: React.FC<KanbanCardComponentProps> = (props) => {
             </div>
             {props.card.completed === false && (
               <>
+              {props.card.desc && (
+                  <div className="mt-2 mb-1">
+                    <p className=" text-sm overflow-hidden text-[#ffff]">
+                      {props.card.desc}
+                    </p>
+                  </div>
+                )}
                 {/* <div></div> */}
                 {props.card.tasks.length > 0 && (
                   <div className="my-2 h-2 w-full bg-theme overflow-hidden rounded-md">
@@ -110,25 +115,30 @@ const KanbanCardComponent: React.FC<KanbanCardComponentProps> = (props) => {
                     )}
                   </div>
                 )}
-                {props.card.desc && (
-                  <div className="mt-2 mb-1">
-                    <p className="truncate text-sm text-slate-500">
-                      {props.card.desc}
-                    </p>
+                
+                <div className="flex justify-between pt-2">
+                  <div className="pb-3 -translate-x-2 flex-wrap">
+                    <div className="relative">
+                      {props.card.Peoples.map((People, index) => (
+                        <span
+                          className={classNames(
+                            props.card.Peoples.length > 0 ? "mt-1" : "",
+                            `rounded-md px-3 py-1 text-sm font-semibold ${People.color} absolute -top-3`
+                          )}
+                          style={{ left: `${1.1 * index}rem` }}
+                          key={index}
+                        >
+                          <div className="h-6 flex items-center justify-center w-6 shadow-inner shadow-black bg-[#ffffff] rounded-full text-theme">
+                            {People.title.charAt(0)}
+                          </div>
+                        </span>
+                      ))}
+                    </div>
                   </div>
-                )}
-                <div className="flex flex-wrap gap-1">
-                  {props.card.Peoples.map((_tag, index) => (
-                    <span
-                      className={classNames(
-                        props.card.Peoples.length > 0 ? "mt-1" : "",
-                        `rounded-md px-3 py-1 text-sm font-semibold ${_tag.color}`
-                      )}
-                      key={index}
-                    >
-                      {_tag.title}
-                    </span>
-                  ))}
+                  <div className="flex items-center">
+                    <BsClock className="h-3 w-3" />
+                    <text className="text-[10px] pl-2 font-light">Due in 4 days</text>
+                  </div>
                 </div>
               </>
             )}

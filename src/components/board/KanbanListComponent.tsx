@@ -75,7 +75,7 @@ const KanbanListComponent: React.FC<KanbanListComponentProps> = (props) => {
               >
                 <div className="w-64 appearance-none rounded-lg bg-components ml-3 p-5">
                   <input
-                    className="w-full rounded-lg text-[#656464] placeholder:pl-3"
+                    className="w-full bg-items rounded-lg pl-4 text-[#000000] placeholder:text-[#00000098]"
                     placeholder={"Enter details"}
                     type="text"
                     value={name}

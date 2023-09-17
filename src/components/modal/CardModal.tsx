@@ -207,7 +207,7 @@ const CardModal:React.FC<CardModalProps> = (props) => {
                                 key={index}
                                 onClick={() => handleDeletePeople(index)}
                               >
-                                <span className="">{People.title}</span>
+                                <div className="h-7 flex items-center justify-center w-7 bg-[#9d9999] rounded-full text-theme">{People.title.charAt(0)}</div>
                                 <XMarkIcon className="h-5 w-5" />
                               </button>
                             ))}

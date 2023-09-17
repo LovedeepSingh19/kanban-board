@@ -6,6 +6,7 @@ import { useEffect, useState } from "react";
 import { useMediaQuery } from "react-responsive";
 import KanbanBoard from "@/components/board/KanbanBoard";
 import KanbanContextComponent from "@/context/KanbanContextComponent";
+import ProgressComponent from "@/components/board/ProgressComponent";
 
 export default function Home() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
@@ -28,8 +29,9 @@ export default function Home() {
       <div className={`flex-1 ${isSidebarOpen ? 'ml-10' : 'ml-40 pl-20'} transition-all bg-black`}>
         <Navbar isOpen={isSidebarOpen} />
 
-        <main className="p-4 overflow-hidden ">
+        <main className={`${!isSidebarOpen? "ml-10":""} p-4 overflow-auto`}>
         {/* <div className={`${!isSidebarOpen? "ml-10":""}`}> */}
+          <ProgressComponent />
           <KanbanContextComponent>
             <KanbanBoard isOpen={isSidebarOpen} />
           </KanbanContextComponent>
