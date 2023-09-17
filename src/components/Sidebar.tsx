@@ -1,7 +1,6 @@
 "use client"
 import React, { Dispatch, SetStateAction, useEffect, useRef, useState } from 'react';
 import { BsArrowLeftCircle } from 'react-icons/bs';
-import { useMediaQuery } from 'react-responsive';
 
 type SidebarProps = {open: boolean, setOpen: Dispatch<SetStateAction<boolean>>};
 

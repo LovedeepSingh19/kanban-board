@@ -1,13 +1,11 @@
 "use client"
-import React, { Dispatch, SetStateAction, useEffect } from "react";
+import React from "react";
 import {
-  IoIosArrowDown,
   IoIosBriefcase,
   IoIosNotifications,
-  IoIosNotificationsOutline,
 } from "react-icons/io";
 import { LiaSearchSolid } from "react-icons/lia";
-import { BsArrowLeftCircle, BsPersonVideo3 } from "react-icons/bs";
+import { BsPersonVideo3 } from "react-icons/bs";
 import { RiArrowDownSFill, RiCheckboxMultipleFill } from "react-icons/ri";
 import { useMediaQuery } from "react-responsive";
 
@@ -17,15 +15,6 @@ type NavbarProps = {
 
 const Navbar: React.FC<NavbarProps> = ({isOpen}) => {
   let isTabletMid = useMediaQuery({ query: "(max-width: 768px)" });
-
-
-  // useEffect(() => {
-  //     if (isTabletMid) {
-  //       setOpen;
-  //     } else {
-  //       setOpen;
-  //     }
-  //   }, [isTabletMid]);
 
   return (
     <>

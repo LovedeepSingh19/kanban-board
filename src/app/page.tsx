@@ -1,8 +1,8 @@
 "use client"
 import "./globals.css"
-import MainPage from "@/components/main/MainPage";
 import Navbar from "@/components/Navbar";
 import Sidebar from "@/components/Sidebar";
+import MainPage from "@/components/main/MainLayout";
 import { useEffect, useState } from "react";
 import { useMediaQuery } from "react-responsive";
 
