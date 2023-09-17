@@ -13,7 +13,7 @@ import { KanbanCard } from "../kanban/KanbanTypes";
 import Datepicker from "react-tailwindcss-datepicker";
 import { DateValueType } from "react-tailwindcss-datepicker/dist/types";
 import { classNames } from "../../utility/css";
-import AddForm from "../kanban/AddForm";
+// import AddForm from "../kanban/AddForm";
 import CreateTagModal, { tagColors } from "./CreateTagModal";
 
 export interface CardModalProps {
@@ -279,10 +279,10 @@ const CardModal:React.FC<CardModalProps> = (props) => {
                                 </button>
                               </div>
                             ))}
-                            <AddForm
+                            {/* <AddForm
                               placeholder="Task name..."
                               onSubmit={handleCreateTask}
-                            />
+                            /> */}
                           </div>
                         </div>
                       </div>
