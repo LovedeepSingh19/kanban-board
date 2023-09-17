@@ -2,16 +2,20 @@ import { CheckIcon, PlusIcon, XMarkIcon } from "@heroicons/react/24/outline";
 import { FormEvent, useEffect, useRef, useState } from "react";
 import { RiAddFill } from "react-icons/ri";
 
-export interface IAddFormProps {
+import React from 'react';
+
+type AddFormProps = {
+  
   placeholder: string;
   onSubmit: (name: string) => void;
-}
+};
 
-export function AddForm(props: IAddFormProps) {
+const AddForm:React.FC<AddFormProps> = (props) => {
+  
   const formRef = useRef<HTMLFormElement>(null);
   const [name, setName] = useState<string>("");
   const [showForm, setShowForm] = useState<boolean>(false);
-
+  
   useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
       if (event.key === "Escape") {
@@ -24,7 +28,7 @@ export function AddForm(props: IAddFormProps) {
       formRef.current?.removeEventListener("keydown", handleKeyDown);
     };
   });
-
+  
   const handleSubmit = (event: FormEvent) => {
     event.preventDefault();
     if (name) {
@@ -33,7 +37,7 @@ export function AddForm(props: IAddFormProps) {
     } else return;
     setShowForm(false);
   };
-
+  
   return (
     <div>
       {showForm ? (
@@ -82,3 +86,7 @@ export function AddForm(props: IAddFormProps) {
     </div>
   );
 }
+export default AddForm;
+
+
+
