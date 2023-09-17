@@ -1,18 +1,14 @@
 import { DropResult } from "react-beautiful-dnd";
 import { CardModalProps } from "../components/modal/CardModal";
-import { DeleteListModalProps } from "../components/modal/DeleteListModal";
-import { RenameListModalProps } from "../components/modal/RenameListModal";
 import { KanbanBoardState, KanbanCard } from "../components/kanban/KanbanTypes";
 
-export type ModalTypes = "DELETE_LIST" | "UPDATE_CARD" | "RENAME_LIST";
+export type ModalTypes = "UPDATE_CARD" ;
 
 export type ModalContextState = {
   type: ModalTypes | null;
   isOpen: boolean;
   modalProps:
-    | DeleteListModalProps
-    | CardModalProps
-    | RenameListModalProps
+    CardModalProps
     | null;
 };
 

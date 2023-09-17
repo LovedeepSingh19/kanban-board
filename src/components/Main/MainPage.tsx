@@ -1,6 +1,6 @@
 import { KanbanContextComponent } from '@/context/KanbanContextComponent';
 import React from 'react';
-import { KanbanBoard } from '../Kanban/KanbanBoard';
+import { KanbanBoard } from '../kanban/KanbanBoard';
 
 type MainPageProps = {
     isOpen: boolean,

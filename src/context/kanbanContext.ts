@@ -7,7 +7,7 @@ import { KanbanBoardState } from "@/components/kanban/KanbanTypes";
 export const defaultKanbanBoardState: KanbanBoardState = [
   {
     id: s4(),
-    title: `To-Do List ${1}`,
+    title: `To-Do List`,
     cards: [
       {
         id: s4(),
@@ -30,7 +30,7 @@ export const defaultKanbanBoardState: KanbanBoardState = [
   },
   {
     id: s4(),
-    title: `In Progress ${2}`,
+    title: `In Progress`,
     cards: [
       {
         id: s4(),

@@ -2,9 +2,9 @@ import { CheckCircleIcon } from "@heroicons/react/24/outline";
 import { memo, useContext } from "react";
 import { Draggable } from "react-beautiful-dnd";
 import KanbanContext from "../../context/kanbanContext";
-import { GetBaseURL } from "../../utility/baseUrl";
 import { classNames } from "../../utility/css";
 import { KanbanCard } from "./KanbanTypes";
+
 
 export interface IKanbanCardComponentProps {
   listIndex: number;

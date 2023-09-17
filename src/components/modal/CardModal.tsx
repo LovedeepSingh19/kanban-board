@@ -14,7 +14,7 @@ import Datepicker from "react-tailwindcss-datepicker";
 import { DateValueType } from "react-tailwindcss-datepicker/dist/types";
 import { CreateTagModal, tagColors } from "./CreateTagModal";
 import { classNames } from "../../utility/css";
-import { AddForm } from "../Kanban/AddForm";
+import { AddForm } from "../kanban/AddForm";
 
 export interface CardModalProps {
   listIndex: number;

@@ -1,13 +1,6 @@
 import { PropsWithChildren, useState } from "react";
 import { DropResult } from "react-beautiful-dnd";
 import { CardModal, CardModalProps } from "../components/modal/CardModal";
-import {
-  DeleteListModal,
-  DeleteListModalProps,
-} from "../components/modal/DeleteListModal";
-import RenameListModal, {
-  RenameListModalProps,
-} from "../components/modal/RenameListModal";
 import useLocalStorage from "../hooks/useLocalStorage";
 import { s4 } from "../utility/uuidGenerator";
 import {
@@ -17,7 +10,6 @@ import {
 } from "./kanbanContext";
 import { hanbleOpenModalProps, ModalContextState } from "./KanbanContextTypes";
 import { KanbanBoardState, KanbanCard } from "@/components/kanban/KanbanTypes";
-import { getURL } from "next/dist/shared/lib/utils";
 
 export interface IAppProps extends PropsWithChildren {}
 
@@ -31,24 +23,6 @@ export function KanbanContextComponent(props: IAppProps) {
   const [modalState, setModalState] = useState<ModalContextState>(
     defaultModalContextState,
   );
-
-  // const handleCreateList = (title: string) => {
-  //   const tempList = [...kanbanState];
-  //   tempList.push({ id: s4(), title, cards: [] });
-  //   setKanbanState(tempList);
-  // };
-
-  // const handleDeleteList = (listIndex: number) => {
-  //   const tempList = [...kanbanState];
-  //   tempList.splice(listIndex, 1);
-  //   setKanbanState(tempList);
-  // };
-
-  // const handleRenameList = (listIndex: number, title: string) => {
-  //   const tempList = [...kanbanState];
-  //   tempList[listIndex].title = title;
-  //   setKanbanState(tempList);
-  // };
 
   const handleCreateCard = (listIndex: number, title: string) => {
     const tempList = [...kanbanState];
