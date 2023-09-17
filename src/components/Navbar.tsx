@@ -1,4 +1,5 @@
-import React from "react";
+"use client"
+import React, { Dispatch, SetStateAction, useEffect } from "react";
 import {
   IoIosArrowDown,
   IoIosBriefcase,
@@ -6,24 +7,38 @@ import {
   IoIosNotificationsOutline,
 } from "react-icons/io";
 import { LiaSearchSolid } from "react-icons/lia";
-import { BsPersonVideo3 } from "react-icons/bs";
-import { RiCheckboxMultipleFill } from "react-icons/ri";
+import { BsArrowLeftCircle, BsPersonVideo3 } from "react-icons/bs";
+import { RiArrowDownSFill, RiCheckboxMultipleFill } from "react-icons/ri";
+import { useMediaQuery } from "react-responsive";
 
-type NavbarProps = {};
+type NavbarProps = {
+  isOpen: boolean,
+};
 
-const Navbar: React.FC<NavbarProps> = () => {
+const Navbar: React.FC<NavbarProps> = ({isOpen}) => {
+  let isTabletMid = useMediaQuery({ query: "(max-width: 768px)" });
+
+
+  // useEffect(() => {
+  //     if (isTabletMid) {
+  //       setOpen;
+  //     } else {
+  //       setOpen;
+  //     }
+  //   }, [isTabletMid]);
+
   return (
     <>
-      <nav className="bg-theme md:px-4">
-        <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto xs:p-2 px-4 py-2">
-          <form className=" lg:w-[400px] xs:w-[100px]">
+      <header className={`bg-theme flex-wrap ${!isOpen? "ml-10": ""}`}>
+        <div className=" flex flex-wrap items-center justify-between mx-auto xs:p-2 px-4 py-2">
+          <form className={`flex-grow max-w-sm`}>
             <label
               htmlFor="default-search"
               className="mb-2 text-sm font-medium text-gray-900 sr-only "
             >
               Search
             </label>
-            <div className={`relative top-2 md:pl-200 pl-10`}>
+            <div className={`relative pl-2`}>
               <div className="absolute inset-y-0 text-items text-2xl flex items-center pl-4 pointer-events-none">
                 <div className="w-5 h-6">
                   <LiaSearchSolid />
@@ -37,18 +52,18 @@ const Navbar: React.FC<NavbarProps> = () => {
               />
             </div>
           </form>
-
-          <div className="ml-2 mr-2">
+          <div className={`ml-2 mr-2 hidden md:flex lg:flex hover:cursor-pointer`}>
             <p className="underline text-sm leading-5 text-right font-semibold text-selected">
               OTHER MENUS
             </p>
           </div>
+
           <div className="flex items-center md:order-2">
             <div
-              className="items-center justify-between hidden w-full md:flex md:w-auto mr-12"
+              className="justify-between hidden w-full xl:flex xl:w-auto mr-12"
               id="mobile-menu-2"
             >
-              <ul className="flex flex-col md:p-0 rounded-lg bg-gray-50 md:flex-row md:space-x-6 md:mt-0 md:border-0 ">
+              <ul className="flex flex-row rounded-lg md:space-x-6 md:mt-0 md:border-0 ">
                 <li>
                   <div className="hover:cursor-pointer">
                     <div className="h-4 w-4 mx-3 mb-2 absolute z-10 text-xs rounded-full bg-blue flex justify-center items-center align-baseline font-bold text-theme">
@@ -91,12 +106,21 @@ const Navbar: React.FC<NavbarProps> = () => {
                 </li>
               </ul>
             </div>
-            <div className="m-2">
-              <p className="font-normal	text-base leading-5 text-right text-[#0D062D]">
-                Anima Agrawal
+            <div className="bg-components items-center hidden mr-4 lg:flex justify-between w-32 p-2 rounded-full hover:cursor-pointer" onClick={() => {}}>
+              <div className="w-5 h-5 bg-blue rounded-full pr-1"></div>
+              <text>English</text>
+              <div className="pl-1 text-selected">
+                <RiArrowDownSFill />
+              </div>
+            </div>
+            <div className="bg-[#a3a0b0] rounded-xl h-8 w-8 ml-2">
+            </div>
+            <div className={`m-2 flex-col ${isTabletMid? 'hidden': ''}`} id="user_details">
+              <p className="font-normal	text-sm leading-5 text-right text-[#ffffff]">
+                Instructor Day
               </p>
-              <p className="font-normal text-[14px] leading-4 text-right text-[#787486]">
-                U.P, India
+              <p className="font-normal text-[10px] leading-4 text-right text-[#787486]">
+                Super Admin
               </p>
             </div>
             <button
@@ -109,8 +133,8 @@ const Navbar: React.FC<NavbarProps> = () => {
             >
               <span className="sr-only">Open user menu</span>
             </button>
-            <div className="m-2">
-              <IoIosArrowDown />
+            <div className="m-2 text-selected">
+              <RiArrowDownSFill />
             </div>
             {/* <div
               className="z-50 hidden my-4 text-base list-none bg-white divide-y divide-gray-100 rounded-lg shadow dark:bg-gray-700 dark:divide-gray-600"
@@ -134,7 +158,7 @@ const Navbar: React.FC<NavbarProps> = () => {
             </div> */}
           </div>
         </div>
-      </nav>
+      </header>
     </>
   );
 };
