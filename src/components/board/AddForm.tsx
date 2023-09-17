@@ -1,4 +1,4 @@
-import { CheckIcon, PlusIcon, XMarkIcon } from "@heroicons/react/24/outline";
+import { CheckIcon, XMarkIcon } from "@heroicons/react/24/outline";
 import { FormEvent, useEffect, useRef, useState } from "react";
 import { RiAddFill } from "react-icons/ri";
 
@@ -50,18 +50,18 @@ const AddForm:React.FC<AddFormProps> = (props) => {
             setShowForm(false);
           }}
         >
-          <div className="w-64 appearance-none rounded-lg border border-slate-300 bg-[#ffff] p-3   dark:border-slate-700 dark:bg-slate-900">
+          <div className="w-64 appearance-none rounded-lg bg-components p-3">
             <input
-              className="w-full rounded-lg dark:bg-slate-700 text-[#656464] dark:placeholder:text-slate-400"
+              className="w-full rounded-lg text-[#656464]"
               placeholder={props.placeholder}
               type="text"
               value={name}
               onChange={(e) => setName(e.target.value)}
               autoFocus
             />
-            <div className="mt-4 flex items-center justify-between">
-              <button className="flex items-center gap-1 rounded-md bg-emerald-600 px-3 py-1 text-sm text-white transition-colors duration-150 ease-in-out hover:bg-emerald-500">
-                <CheckIcon className="h-5 w-5" />
+            <div className="mt-4 flex items-center justify-between text-[#ffffff]">
+              <button className="flex items-center gap-1 rounded-md px-3 py-1 text-sm">
+                <CheckIcon className="h-5 w-5 text-[#ffff]" />
                 Add
               </button>
               <button

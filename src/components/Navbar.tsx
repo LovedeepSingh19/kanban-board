@@ -126,11 +126,11 @@ const Navbar: React.FC<NavbarProps> = ({isOpen}) => {
               <RiArrowDownSFill />
             </div>
             {/* <div
-              className="z-50 hidden my-4 text-base list-none bg-white divide-y divide-gray-100 rounded-lg shadow dark:bg-gray-700 dark:divide-gray-600"
+              className="z-50 hidden my-4 text-base list-none bg-white divide-y divide-gray-100 rounded-lg shadow :bg-gray-700 :divide-gray-600"
               id="user-dropdown"
             > */}
             {/* <div className="px-4 py-3">
-                <span className="block text-sm text-gray-900 dark:text-white">
+                <span className="block text-sm text-gray-900 :text-white">
                   Bonnie Green
                 </span>
               </div>
@@ -138,7 +138,7 @@ const Navbar: React.FC<NavbarProps> = ({isOpen}) => {
                 <li>
                   <a
                     href="#"
-                    className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white"
+                    className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 :hover:bg-gray-600 :text-gray-200 :hover:text-white"
                   >
                     Dashboard
                   </a>

@@ -4,9 +4,11 @@ import KanbanContext from "../../context/kanbanContext";
 import KanbanListComponent from "./KanbanListComponent";
 
 
-type KanbanBoardProps = {};
+type KanbanBoardProps = {
+  isOpen: boolean
+};
 
-const KanbanBoard:React.FC<KanbanBoardProps> = () => {
+const KanbanBoard:React.FC<KanbanBoardProps> = (props) => {
   
   
     const { kanbanState, handleDragEnd } =
@@ -29,6 +31,7 @@ const KanbanBoard:React.FC<KanbanBoardProps> = () => {
                   key={_list.id}
                   listIndex={index}
                   list={_list}
+                  isOpen={props.isOpen}
                 />
               ))}
               {provided.placeholder}

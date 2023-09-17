@@ -5,7 +5,7 @@ export type KanbanTask = {
   completed: boolean;
 };
 
-export type KanbanTag = {
+export type KanbanPeople = {
   color: string;
   title: string;
 };
@@ -16,7 +16,7 @@ export type KanbanCard = {
   desc?: string;
   imageUrl?: string;
   completed: boolean;
-  tags: KanbanTag[];
+  Peoples: KanbanPeople[];
   tasks: KanbanTask[];
   date: DateValueType;
 };

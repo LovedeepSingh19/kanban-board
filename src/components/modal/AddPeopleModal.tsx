@@ -2,7 +2,7 @@ import { Dialog, RadioGroup, Transition } from "@headlessui/react";
 import { CheckIcon } from "@heroicons/react/24/outline";
 import React, { Fragment, useState } from "react";
 
-export const tagColors: string[] = [
+export const PeopleColors: string[] = [
   "bg-red-600 text-white",
   "bg-blue-600 text-white",
   "bg-green-600 text-white",
@@ -13,18 +13,18 @@ export const tagColors: string[] = [
   "bg-orange-400 text-slate-900",
 ];
 
-type CreateTagModalProps = {
+type CreatePeopleModalProps = {
   show: boolean;
   handleClose: React.Dispatch<React.SetStateAction<boolean>>;
-  handleSubmit: (tagName: string, colorIndex: number) => void;
+  handleSubmit: (PeopleName: string, colorIndex: number) => void;
 };
 
-const CreateTagModal:React.FC<CreateTagModalProps> = (props) => {
+const CreatePeopleModal:React.FC<CreatePeopleModalProps> = (props) => {
   
   const [name, setName] = useState<string>("");
   const [color, setColor] = useState<number>(0);
 
-  const handleCreate = (tagName: string, colorIndex: number) => {
+  const handleCreate = (PeopleName: string, colorIndex: number) => {
     if (name === "") return;
     props.handleSubmit(name, color);
     setName("");
@@ -57,18 +57,18 @@ const CreateTagModal:React.FC<CreateTagModalProps> = (props) => {
               leaveFrom="opacity-100 scale-100"
               leaveTo="opacity-0 scale-95"
             >
-              <Dialog.Panel className="w-full max-w-sm transform overflow-hidden rounded-2xl bg-white p-6 text-left align-middle shadow-xl transition-all dark:bg-slate-900">
+              <Dialog.Panel className="w-full max-w-sm transform overflow-hidden rounded-2xl bg-white p-6 text-left align-middle shadow-xl transition-all :bg-slate-900">
                 <Dialog.Title
                   as="h3"
-                  className="text-lg font-medium leading-6 text-slate-900 dark:text-white"
+                  className="text-lg font-medium leading-6 text-slate-900 :text-white"
                 >
-                  Create Tag
+                  Create People
                 </Dialog.Title>
                 <div className="mt-3">
                   <input
                     type="text"
-                    className="w-full rounded-lg font-semibold placeholder:font-light dark:bg-slate-900 dark:text-white dark:placeholder:text-slate-400 dark:hover:border"
-                    placeholder="Tag name...."
+                    className="w-full rounded-lg font-semibold placeholder:font-light :bg-slate-900 :text-white :placeholder:text-slate-400 :hover:border"
+                    placeholder="People name...."
                     value={name}
                     onChange={(e) => setName(e.target.value)}
                   />
@@ -77,10 +77,10 @@ const CreateTagModal:React.FC<CreateTagModalProps> = (props) => {
                 <div className="mt-3">
                   <RadioGroup value={color} onChange={setColor}>
                     <RadioGroup.Label className="sr-only">
-                      Tag color
+                      People color
                     </RadioGroup.Label>
                     <div className="flex flex-wrap gap-3">
-                      {tagColors.map((color, index) => (
+                      {PeopleColors.map((color, index) => (
                         <RadioGroup.Option
                           key={color}
                           value={index}
@@ -110,7 +110,7 @@ const CreateTagModal:React.FC<CreateTagModalProps> = (props) => {
                   <button
                     onClick={() => props.handleClose(false)}
                     type="button"
-                    className="inline-flex justify-center rounded-md border bg-transparent px-3 py-1 text-base font-medium transition-colors duration-150 focus:outline-none focus:ring-1 focus:ring-indigo-600 hover:border-indigo-600 hover:ring-1 hover:ring-indigo-600 dark:text-white"
+                    className="inline-flex justify-center rounded-md border bg-transparent px-3 py-1 text-base font-medium transition-colors duration-150 focus:outline-none focus:ring-1 focus:ring-indigo-600 hover:border-indigo-600 hover:ring-1 hover:ring-indigo-600 :text-white"
                   >
                     Cancel
                   </button>
@@ -124,6 +124,6 @@ const CreateTagModal:React.FC<CreateTagModalProps> = (props) => {
   );
 }
 
-export default CreateTagModal;
+export default CreatePeopleModal;
 
 

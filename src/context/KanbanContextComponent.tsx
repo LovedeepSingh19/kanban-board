@@ -36,7 +36,7 @@ const KanbanContextComponent:React.FC<KanbanContextComponentProps> = (props) => 
       title,
       completed: false,
       tasks: [],
-      tags: [],
+      Peoples: [],
       date: null,
     });
     setKanbanState(tempList);

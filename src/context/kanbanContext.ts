@@ -1,9 +1,9 @@
 import { createContext } from "react";
-import { tagColors } from "../components/modal/CreateTagModal";
 // import { GetBaseURL } from "../utility/baseUrl";
 import { s4 } from "../utility/uuidGenerator";
 import { KanbanContext, ModalContextState } from "./KanbanContextTypes";
 import { KanbanBoardState } from "@/components/board/KanbanTypes";
+import { PeopleColors } from "@/components/modal/AddPeopleModal";
 export const defaultKanbanBoardState: KanbanBoardState = [
   {
     id: s4(),
@@ -15,10 +15,10 @@ export const defaultKanbanBoardState: KanbanBoardState = [
         desc: "This the the Demo task",
         imageUrl: `${''}/static/kanbanDemoImage.jpg`,
         completed: false,
-        tags: [
-          { title: "Demo", color: tagColors[0] },
-          { title: "Demo", color: tagColors[1] },
-          { title: "Demo", color: tagColors[2] },
+        Peoples: [
+          { title: "Demo", color: PeopleColors[0] },
+          { title: "Demo", color: PeopleColors[1] },
+          { title: "Demo", color: PeopleColors[2] },
         ],
         tasks: [
           { title: "Demo task 1", completed: false },
@@ -38,7 +38,7 @@ export const defaultKanbanBoardState: KanbanBoardState = [
         desc: "",
         imageUrl: "/static/kanbanDemoImage.jpg",
         completed: true,
-        tags: [],
+        Peoples: [],
         tasks: [],
         date: null,
       },

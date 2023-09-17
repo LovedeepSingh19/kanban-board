@@ -28,12 +28,12 @@ export default function Home() {
       <div className={`flex-1 ${isSidebarOpen ? 'ml-10' : 'ml-40 pl-20'} transition-all bg-black`}>
         <Navbar isOpen={isSidebarOpen} />
 
-        <main className="p-4 ">
-        <div className={`${!isSidebarOpen? "ml-10":""}`}>
+        <main className="p-4 overflow-hidden ">
+        {/* <div className={`${!isSidebarOpen? "ml-10":""}`}> */}
           <KanbanContextComponent>
-            <KanbanBoard />
+            <KanbanBoard isOpen={isSidebarOpen} />
           </KanbanContextComponent>
-    </div>
+    {/* </div> */}
         </main>
       </div>
     </div>
