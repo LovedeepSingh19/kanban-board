@@ -24,10 +24,10 @@ export default function Home() {
    <div className="flex flex-col h-screen">
       <Sidebar open={isSidebarOpen} setOpen={setIsSidebarOpen} />
 
-      <div className={`flex-1 ${isSidebarOpen ? 'ml-10' : 'ml-40 pl-20'} transition-all`}>
+      <div className={`flex-1 ${isSidebarOpen ? 'ml-10' : 'ml-40 pl-20'} transition-all bg-black`}>
         <Navbar isOpen={isSidebarOpen} />
 
-        <main className="p-4">
+        <main className="p-4 ">
           <MainPage isOpen={isSidebarOpen} />
         </main>
       </div>

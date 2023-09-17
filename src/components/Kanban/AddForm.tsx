@@ -1,0 +1,84 @@
+import { CheckIcon, PlusIcon, XMarkIcon } from "@heroicons/react/24/outline";
+import { FormEvent, useEffect, useRef, useState } from "react";
+import { RiAddFill } from "react-icons/ri";
+
+export interface IAddFormProps {
+  placeholder: string;
+  onSubmit: (name: string) => void;
+}
+
+export function AddForm(props: IAddFormProps) {
+  const formRef = useRef<HTMLFormElement>(null);
+  const [name, setName] = useState<string>("");
+  const [showForm, setShowForm] = useState<boolean>(false);
+
+  useEffect(() => {
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        setShowForm(false);
+        setName("");
+      }
+    };
+    formRef.current?.addEventListener("keydown", handleKeyDown);
+    return () => {
+      formRef.current?.removeEventListener("keydown", handleKeyDown);
+    };
+  });
+
+  const handleSubmit = (event: FormEvent) => {
+    event.preventDefault();
+    if (name) {
+      setName("");
+      props.onSubmit(name);
+    } else return;
+    setShowForm(false);
+  };
+
+  return (
+    <div>
+      {showForm ? (
+        <form
+          ref={formRef}
+          autoComplete="off"
+          onSubmit={handleSubmit}
+          onBlur={() => {
+            if (name) return;
+            setShowForm(false);
+          }}
+        >
+          <div className="w-64 appearance-none rounded-lg border border-slate-300 bg-[#ffff] p-3   dark:border-slate-700 dark:bg-slate-900">
+            <input
+              className="w-full rounded-lg dark:bg-slate-700 text-[#656464] dark:placeholder:text-slate-400"
+              placeholder={props.placeholder}
+              type="text"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+              autoFocus
+            />
+            <div className="mt-4 flex items-center justify-between">
+              <button className="flex items-center gap-1 rounded-md bg-emerald-600 px-3 py-1 text-sm text-white transition-colors duration-150 ease-in-out hover:bg-emerald-500">
+                <CheckIcon className="h-5 w-5" />
+                Add
+              </button>
+              <button
+                onClick={() => {
+                  setName("");
+                  setShowForm(false);
+                }}
+                className="rounded-md p-2 text-red-600"
+              >
+                <XMarkIcon className="h-6 w-6" />
+              </button>
+            </div>
+          </div>
+        </form>
+      ) : (
+        <button
+          onClick={() => setShowForm((prev) => !prev)}
+          className="text-[#ffffff] flex items-center justify-center bg-selected font-bold text-lg h-6 w-6 rounded-lg">
+                <RiAddFill />
+        </button>
+      )}
+    </div>
+  );
+}

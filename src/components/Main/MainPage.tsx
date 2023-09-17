@@ -1,4 +1,6 @@
+import { KanbanContextComponent } from '@/context/KanbanContextComponent';
 import React from 'react';
+import { KanbanBoard } from '../Kanban/KanbanBoard';
 
 type MainPageProps = {
     isOpen: boolean,
@@ -6,6 +8,10 @@ type MainPageProps = {
 
 const MainPage:React.FC<MainPageProps> = ({isOpen}) => {
     
-    return <div className={`${!isOpen? "ml-10":""}`}>Have a good coding</div>
+    return <div className={`${!isOpen? "ml-10":""}`}>
+        <KanbanContextComponent>
+            <KanbanBoard />
+        </KanbanContextComponent>
+    </div>
 }
 export default MainPage;

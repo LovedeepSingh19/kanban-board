@@ -108,7 +108,7 @@ const Navbar: React.FC<NavbarProps> = ({isOpen}) => {
             </div>
             <div className="bg-components items-center hidden mr-4 lg:flex justify-between w-32 p-2 rounded-full hover:cursor-pointer" onClick={() => {}}>
               <div className="w-5 h-5 bg-blue rounded-full pr-1"></div>
-              <text>English</text>
+              <text className="text-[#ffff]">English</text>
               <div className="pl-1 text-selected">
                 <RiArrowDownSFill />
               </div>
