@@ -13,13 +13,14 @@ export const tagColors: string[] = [
   "bg-orange-400 text-slate-900",
 ];
 
-export interface ITagsProps {
+type CreateTagModalProps = {
   show: boolean;
   handleClose: React.Dispatch<React.SetStateAction<boolean>>;
   handleSubmit: (tagName: string, colorIndex: number) => void;
-}
+};
 
-export function CreateTagModal(props: ITagsProps) {
+const CreateTagModal:React.FC<CreateTagModalProps> = (props) => {
+  
   const [name, setName] = useState<string>("");
   const [color, setColor] = useState<number>(0);
 
@@ -122,3 +123,7 @@ export function CreateTagModal(props: ITagsProps) {
     </Transition>
   );
 }
+
+export default CreateTagModal;
+
+

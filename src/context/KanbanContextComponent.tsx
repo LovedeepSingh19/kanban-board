@@ -1,6 +1,5 @@
 import { PropsWithChildren, useState } from "react";
 import { DropResult } from "react-beautiful-dnd";
-import { CardModal, CardModalProps } from "../components/modal/CardModal";
 import useLocalStorage from "../hooks/useLocalStorage";
 import { s4 } from "../utility/uuidGenerator";
 import {
@@ -10,10 +9,16 @@ import {
 } from "./kanbanContext";
 import { hanbleOpenModalProps, ModalContextState } from "./KanbanContextTypes";
 import { KanbanBoardState, KanbanCard } from "@/components/kanban/KanbanTypes";
+import CardModal from "@/components/modal/CardModal";
 
-export interface IAppProps extends PropsWithChildren {}
+type KanbanContextComponentProps = {
+  children: any
+};
 
-export function KanbanContextComponent(props: IAppProps) {
+
+const KanbanContextComponent:React.FC<KanbanContextComponentProps> = (props) => {
+  
+
   const { children } = props;
   const [kanbanState, setKanbanState] = useLocalStorage<KanbanBoardState>(
     "kanban-state",
@@ -113,7 +118,7 @@ export function KanbanContextComponent(props: IAppProps) {
     if (state.modalProps !== null) {
       switch (state.type) {
         case "UPDATE_CARD": {
-          return <CardModal {...(state.modalProps as CardModalProps)} />;
+          return <CardModal {...(state.modalProps)} />;
         }
         default: {
           return null;
@@ -140,3 +145,5 @@ export function KanbanContextComponent(props: IAppProps) {
     </KanbanContextProvider>
   );
 }
+
+export default KanbanContextComponent;
