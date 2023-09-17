@@ -1,4 +1,4 @@
-
+"use client"
 import KanbanContextComponent from '@/context/KanbanContextComponent';
 import React from 'react';
 import KanbanBoard from './kanban/KanbanBoard';
