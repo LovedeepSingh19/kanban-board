@@ -2,7 +2,7 @@
 import "./globals.css"
 import Navbar from "@/components/Navbar";
 import Sidebar from "@/components/Sidebar";
-import MainPage from "@/components/main/MainLayout";
+import MainPage from "@/components/MainLayout";
 import { useEffect, useState } from "react";
 import { useMediaQuery } from "react-responsive";
 
