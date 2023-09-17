@@ -2,9 +2,10 @@
 import "./globals.css"
 import Navbar from "@/components/Navbar";
 import Sidebar from "@/components/Sidebar";
-import MainPage from "@/components/MainLayout";
 import { useEffect, useState } from "react";
 import { useMediaQuery } from "react-responsive";
+import KanbanBoard from "@/components/kanban/KanbanBoard";
+import KanbanContextComponent from "@/context/KanbanContextComponent";
 
 export default function Home() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
@@ -28,7 +29,11 @@ export default function Home() {
         <Navbar isOpen={isSidebarOpen} />
 
         <main className="p-4 ">
-          <MainPage isOpen={isSidebarOpen} />
+        <div className={`${!isSidebarOpen? "ml-10":""}`}>
+          <KanbanContextComponent>
+            <KanbanBoard />
+          </KanbanContextComponent>
+    </div>
         </main>
       </div>
     </div>
