@@ -1,5 +1,4 @@
 import { createContext } from "react";
-// import { GetBaseURL } from "../utility/baseUrl";
 import { s4 } from "../utility/uuidGenerator";
 import { KanbanContext, ModalContextState } from "./KanbanContextTypes";
 import { KanbanBoardState } from "@/components/board/KanbanTypes";
@@ -13,7 +12,7 @@ export const defaultKanbanBoardState: KanbanBoardState = [
         id: s4(),
         title: "Demo Task",
         desc: "This the the Demo task",
-        imageUrl: `${''}/static/kanbanDemoImage.jpg`,
+        imageUrl: `static/kanbanDemoImage.jpg`,
         completed: false,
         Peoples: [
           { title: "Demo", color: PeopleColors[0] },
@@ -31,18 +30,7 @@ export const defaultKanbanBoardState: KanbanBoardState = [
   {
     id: s4(),
     title: `In Progress`,
-    cards: [
-      {
-        id: s4(),
-        title: "Demo card completed",
-        desc: "",
-        imageUrl: "/static/kanbanDemoImage.jpg",
-        completed: true,
-        Peoples: [],
-        tasks: [],
-        date: null,
-      },
-    ],
+    cards: [],
   },
   { id: s4(), title: "Done", cards: [] },
   { id: s4(), title: "Revised", cards: [] },

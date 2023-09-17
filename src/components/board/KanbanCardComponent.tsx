@@ -37,7 +37,7 @@ const KanbanCardComponent: React.FC<KanbanCardComponentProps> = (props) => {
       {(provided) => (
         <div
           className={`mb-3 pb-2 ${
-            props.isOpen ? "w-[320px]" : "w-[250px]"
+            props.isOpen ? "w-[315px]" : "w-[250px]"
           } z-10 rounded-lg bg-components  shadow-sm transition-shadow duration-200 ease-in-out focus:outline-none focus:ring hover:shadow-lg hover:ring-0 text-[#aba8a8] hover:shadow-slate-800/60`}
           {...provided.draggableProps}
           {...provided.dragHandleProps}

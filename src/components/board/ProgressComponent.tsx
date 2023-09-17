@@ -1,12 +1,15 @@
+import { EllipsisVerticalIcon } from "@heroicons/react/24/outline";
 import { BsArrowLeftCircleFill } from "react-icons/bs";
+import { IoMdPersonAdd } from "react-icons/io";
+import { TfiCommentAlt } from "react-icons/tfi";
 
 type ProgressComponentProps = {};
 
 const ProgressComponent: React.FC<ProgressComponentProps> = () => {
   return (
     <div className="p-6 pl-8 pr-8 ">
-      <div className="h-30 p-6 bg-theme rounded-md">
-        <div className="flex justify-between">
+      <div className="h-30 p-6 bg-theme rounded-md flex-col">
+        <div className="flex items-start justify-between">
           <div className="flex items-center">
             <button className="pl-3 pr-3 text-[#ffffff88] text-2xl">
               <BsArrowLeftCircleFill />
@@ -85,6 +88,72 @@ const ProgressComponent: React.FC<ProgressComponentProps> = () => {
                   </clipPath>
                 </defs>
               </svg>
+            </div>
+            <EllipsisVerticalIcon className="text-[#ffffff] h-5 pl-4" />
+          </div>
+        </div>
+        <div className="p-6 pb-0 pl-10 flex items-start justify-between">
+          <div className="hidden md:flex justify-between items-start">
+            <div className="absolute">
+              <div className="relative">
+                <span
+                  className={`rounded-md px-3 py-1 text-sm font-semibold mt-1 absolute -top-1`}
+                  style={{ left: `${1.1 * 0}rem` }}
+                >
+                  <div className="h-7 flex items-center justify-center w-7 shadow-inner shadow-black bg-[#ffffff] rounded-full text-theme"></div>
+                </span>
+                <span
+                  className={`rounded-md px-3 py-1 text-sm font-semibold mt-1 absolute -top-1`}
+                  style={{ left: `${1.1 * 1}rem` }}
+                >
+                  <div className="h-7 flex items-center justify-center w-7 shadow-inner shadow-black bg-[#ffffff] rounded-full text-theme"></div>
+                </span>
+                <span
+                  className={`rounded-md px-3 py-1 text-sm font-semibold mt-1 absolute -top-1`}
+                  style={{ left: `${1.1 * 2}rem` }}
+                >
+                  <div className="h-7 flex items-center justify-center w-7 shadow-inner shadow-black bg-[#ffffff] rounded-full text-theme"></div>
+                </span>
+                <span
+                  className={`rounded-md px-3 py-1 text-sm font-semibold mt-1 absolute -top-1`}
+                  style={{ left: `${1.1 * 3}rem` }}
+                >
+                  <div className="h-7 flex items-center justify-center w-7 shadow-inner shadow-black bg-[#ffffff] rounded-full text-theme"></div>
+                </span>
+                <span
+                  className={`rounded-md px-3 py-1 text-sm font-semibold mt-1 absolute -top-1`}
+                  style={{ left: `${1.1 * 4}rem` }}
+                >
+                  <div className="h-7 flex items-center justify-center w-7 shadow-inner bg-pink rounded-full text-[10px] text-[#ffffff]">
+                    +5
+                  </div>
+                </span>
+              </div>
+            </div>
+            <div className="text-[#ffffff] hover:cursor-pointer items-center justify-center ml-[130px] flex pt-2 pb-2 pl-3 pr-3 rounded-xl bg-selected">
+              <IoMdPersonAdd />
+              <text className="pl-2 text-[13px]">Invite People</text>
+            </div>
+            <div className="text-[#ffffff] hover:cursor-pointer items-center justify-center ml-3 flex p-2 rounded-xl bg-theme border-solid border-[0.5px] border-items">
+              <text className="pl-3 pr-3 text-[12px]">Private</text>
+            </div>
+            <div className="text-[#ffffff] hover:cursor-pointer items-center justify-center ml-3 flex pt-2 pb-2 pl-3 pr-3  rounded-xl bg-items">
+              <text className="pl-2 pr-2 text-[13px]">Edit</text>
+            </div>
+            <div className="text-[#ffffff] hover:cursor-pointer items-center justify-center ml-3 flex p-2 rounded-xl bg-theme border-solid border-[0.5px] border-items">
+              <TfiCommentAlt className="text-[12px]" />
+              <text className="pl-2 text-[12px]">45 Coments</text>
+            </div>
+          </div>
+          <div className= "flex items-start justify-start pt-1">
+                <div className="text-[#ffff] pr-3 pt-1 text-xs">Total Progerss 60%</div>
+            <div className="my-2 h-2 w-[200px] bg-[#1E1C3A] overflow-hidden rounded-md">
+              <div
+                style={{
+                  width: `${60}%`,
+                }}
+                className="flex h-6 items-center justify-center bg-selected transition-transform duration-100 ease-in"
+              ></div>
             </div>
           </div>
         </div>
