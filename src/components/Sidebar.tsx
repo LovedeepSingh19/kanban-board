@@ -229,8 +229,8 @@ const Sidebar: React.FC<SidebarProps> = ({ open, setOpen }) => {
             <div className={`${open ? "hidden" : ""} w-2`}></div>
           </div>
         </div>
-        <div className={`flex items-center justify-center pt-[60px] ${open? "hidden":""}`}>
-          <div className="h-[180px] p-6 flex-row w-[220px] bg-gradient-to-r to-[#2d8ac0] from-[#0b4f77]  rounded-3xl">
+        <div className={`flex absolute items-center left-[30px] justify-center pt-[60px] ${open? "hidden":""}`}>
+          <div className="h-[180px] overflow-hidden p-6 flex-row w-[220px] bg-gradient-to-r to-[#2d8ac0] from-[#0b4f77]  rounded-3xl">
             <div>
               <svg
                 width="15"
@@ -325,8 +325,8 @@ const Sidebar: React.FC<SidebarProps> = ({ open, setOpen }) => {
             </div>
             <div className="text-[18px] font-semibold pt-3 pb-3 text-[#ffff]">Increase your work with Kanban</div>
             <BiRightArrowAlt onClick={() => {}} className="text-[20px] hover:cursor-pointer w-10 text-[#ffff] " />
+        <div className="relative w-[200px] h-[200px] bottom-[40px] -right-[90px] rounded-full bg-blue"></div>
           </div>
-        {/* <div className="relative h-10 w-10 rounded-full"></div> */}
         </div>
       </div>
     </>
