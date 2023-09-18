@@ -73,7 +73,9 @@ const KanbanListComponent: React.FC<KanbanListComponentProps> = (props) => {
                   setShowForm(false);
                 }}
               >
-                <div className="w-64 appearance-none rounded-lg bg-components ml-3 p-5">
+                <div className={`${
+                          props.isOpen ? "w-[300px] ml-5" : "ml-3 w-[310px]"
+                        } appearance-none rounded-lg  bg-components p-5`}>
                   <input
                     className="w-full bg-items rounded-lg pl-4 text-[#000000] placeholder:text-[#00000067]"
                     placeholder={"Enter details"}

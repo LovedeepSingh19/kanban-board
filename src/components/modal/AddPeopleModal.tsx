@@ -3,14 +3,10 @@ import { CheckIcon } from "@heroicons/react/24/outline";
 import React, { Fragment, useState } from "react";
 
 export const PeopleColors: string[] = [
-  "bg-red-600 text-white",
-  "bg-blue-600 text-white",
-  "bg-green-600 text-white",
-  "bg-yellow-400 text-slate-900",
-  "bg-purple-600 text-white",
-  "bg-teal-600 text-white",
-  "bg-cyan-400 text-slate-900",
-  "bg-orange-400 text-slate-900",
+  "bg-blue text-[#ffff]",
+  "bg-pink text-[#ffff]",
+  "bg-green text-[#ffff]",
+  "bg-white text-[#ffff]",
 ];
 
 type CreatePeopleModalProps = {
@@ -57,7 +53,7 @@ const CreatePeopleModal:React.FC<CreatePeopleModalProps> = (props) => {
               leaveFrom="opacity-100 scale-100 bg-theme"
               leaveTo="opacity-0 scale-95"
             >
-              <Dialog.Panel className="w-full max-w-sm transform overflow-hidden rounded-2xl bg-white p-6 text-left align-middle shadow-xl transition-all bg-components">
+              <Dialog.Panel className="w-full max-w-sm transform overflow-hidden rounded-2xl p-6 text-left align-middle shadow-xl transition-all bg-components">
                 <Dialog.Title
                   as="h3"
                   className="text-lg font-medium leading-6 text-[#ffff]"
@@ -67,14 +63,14 @@ const CreatePeopleModal:React.FC<CreatePeopleModalProps> = (props) => {
                 <div className="mt-3">
                   <input
                     type="text"
-                    className="w-full rounded-lg font-semibold placeholder:font-light bg-components text-[#ffff] placeholder:text-slate-400 hover:border"
+                    className="w-full rounded-lg font-semibold placeholder:font-normal bg-components text-[#ffff] pl-2 hover:border"
                     placeholder="People name...."
                     value={name}
                     onChange={(e) => setName(e.target.value)}
                   />
                 </div>
 
-                <div className="mt-3">
+                <div className="mt-3 text-[#ffff]">
                   <RadioGroup value={color} onChange={setColor}>
                     <RadioGroup.Label className="sr-only">
                       People color

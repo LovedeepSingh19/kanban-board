@@ -201,13 +201,13 @@ const CardModal:React.FC<CardModalProps> = (props) => {
                           <div className="flex w-full flex-wrap gap-2">
                             {Peoples.map((People, index) => (
                               <button
-                                className={`flex items-center gap-1 rounded-lg py-1 pl-2 pr-1 text-sm font-semibold hover:bg-opacity-80 ${People.color}`}
+                                className={`flex items-center gap-1 rounded-lg py-1 pl-2 pr-1 text-sm font-semibold hover:bg-opacity-80`}
                                 role="button"
                                 aria-label="remove People"
                                 key={index}
                                 onClick={() => handleDeletePeople(index)}
                               >
-                                <div className="h-7 flex items-center justify-center w-7 bg-[#9d9999] rounded-full text-theme">{People.title.charAt(0)}</div>
+                                <div className={`h-7 flex items-center justify-center w-7 ${People.color} rounded-full text-theme`}>{People.title.charAt(0)}</div>
                                 <XMarkIcon className="h-5 w-5" />
                               </button>
                             ))}

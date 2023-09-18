@@ -121,12 +121,12 @@ const KanbanCardComponent: React.FC<KanbanCardComponentProps> = (props) => {
                         <span
                           className={classNames(
                             props.card.Peoples.length > 0 ? "mt-1" : "",
-                            `rounded-md px-3 py-1 text-sm font-semibold ${People.color} absolute -top-3`
+                            `rounded-md px-3 py-1 text-sm font-semibold absolute -top-3`
                           )}
                           style={{ left: `${1.1 * index}rem` }}
                           key={index}
                         >
-                          <div className="h-6 flex items-center justify-center w-6 shadow-inner shadow-black bg-[#ffffff] rounded-full text-theme">
+                          <div className={`h-6 flex items-center justify-center w-6 shadow-inner shadow-black ${People.color} rounded-full text-theme`}>
                             {People.title.charAt(0)}
                           </div>
                         </span>

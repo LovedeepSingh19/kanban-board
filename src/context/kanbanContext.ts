@@ -15,9 +15,9 @@ export const defaultKanbanBoardState: KanbanBoardState = [
         imageUrl: `static/kanbanDemoImage.jpg`,
         completed: false,
         Peoples: [
-          { title: "Demo", color: PeopleColors[0] },
-          { title: "Demo", color: PeopleColors[1] },
-          { title: "Demo", color: PeopleColors[2] },
+          { title: "Demo", color: PeopleColors[3] },
+          { title: "Demo", color: PeopleColors[3] },
+          { title: "Demo", color: PeopleColors[3] },
         ],
         tasks: [
           { title: "Demo task 1", completed: false },
