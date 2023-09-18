@@ -35,7 +35,7 @@ export default function Home() {
           <main className={`${!isSidebarOpen ? "ml-10" : ""} p-4`}>
             {/* <div className={`${!isSidebarOpen? "ml-10":""}`}> */}
             <ProgressComponent />
-            <div className="overflow-auto">
+            <div className="overflow-auto scrollbar-thin scrollbar-thumb-items scrollbar-track-black ">
               <KanbanContextComponent>
                 <KanbanBoard isOpen={isSidebarOpen} />
               </KanbanContextComponent>

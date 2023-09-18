@@ -114,8 +114,8 @@ const Navbar: React.FC<NavbarProps> = ({ isOpen }) => {
               className="hover:cursor-pointer flex items-center"
               onClick={() => setModal(!modal)}
             >
-              <div className="bg-[#a3a0b0] rounded-xl h-8 w-8 ml-2"></div>
-              <div className={`m-2 flex-col`} id="user_details">
+              <div className="bg-[#a3a0b0] rounded-lg h-8 w-8 ml-2"></div>
+              <div className={`m-2 items-center justify-end flex-col`}>
                 <p className="font-normal	text-sm leading-5 text-right text-[#ffffff]">
                   Instructor Day
                 </p>
@@ -124,7 +124,7 @@ const Navbar: React.FC<NavbarProps> = ({ isOpen }) => {
                 </p>
               </div>
               <div className="m-2 text-selected">
-                <RiArrowDownSFill />
+                <RiArrowDownSFill className="h-6 w-6" />
               </div>
               {modal && (
                 <div className="z-50 absolute top-[60px] w-[160px] right-7 text-base text-[#ffff] bg-components rounded-lg shadow">

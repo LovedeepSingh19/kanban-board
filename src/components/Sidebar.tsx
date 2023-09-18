@@ -64,12 +64,12 @@ const Sidebar: React.FC<SidebarProps> = ({ open, setOpen }) => {
               />
             </div>
           </form>
-<div className="flex justify-center items-center pt-5">
+<div className="flex justify-center items-center pt-5 ">
           <div
-              className="justify-between flex items-center"
+              className="justify-between flex items-center w-max "
               id="mobile-menu-2"
             >
-              <ul className="flex flex-row rounded-lg md:space-x-9 md:mt-0 md:border-0 ">
+              <ul className="flex flex-row rounded-lg space-x-9  ">
                 <li>
                   <div className="hover:cursor-pointer">
                     <div className="h-4 w-4 mx-3 mb-2 absolute z-10 text-xs rounded-full bg-blue flex justify-center items-center align-baseline font-bold text-theme">

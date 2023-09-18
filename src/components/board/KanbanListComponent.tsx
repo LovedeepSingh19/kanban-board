@@ -50,7 +50,7 @@ const KanbanListComponent: React.FC<KanbanListComponentProps> = (props) => {
           {...provided.draggableProps}
           ref={provided.innerRef}
         >
-          <div className="flex cursor-grab touch-manipulation flex-col">
+          <div className="flex min-h-[800px] cursor-grab touch-manipulation flex-col">
             <div
               {...provided.dragHandleProps}
               className="flex flex-row items-center justify-between rounded-t-lg p-4 focus:border-none focus:outline-none focus:ring text-[#dfdede]"
@@ -137,7 +137,6 @@ const KanbanListComponent: React.FC<KanbanListComponentProps> = (props) => {
                         </div>
                       </div>
                     )}
-                    {/* {provided.placeholder} */}
                   </div>
                 </div>
               )}
