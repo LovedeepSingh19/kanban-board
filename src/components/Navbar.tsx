@@ -13,6 +13,7 @@ type NavbarProps = {
 const Navbar: React.FC<NavbarProps> = ({ isOpen }) => {
   let isTabletMid = useMediaQuery({ query: "(max-width: 768px)" });
   const [modal, setModal] = useState(false);
+  const [language, setLanguage] = useState(false);
 
   return (
     <>
@@ -101,14 +102,32 @@ const Navbar: React.FC<NavbarProps> = ({ isOpen }) => {
               </ul>
             </div>
             <div
-              className="bg-components items-center hidden mr-4 lg:flex justify-between w-32 p-2 rounded-full hover:cursor-pointer"
-              onClick={() => {}}
+              className="bg-components items-center hidden mr-4 lg:flex justify-between w-32 p-2 pl-4 pr-4 rounded-full hover:cursor-pointer"
+              onClick={() => setLanguage(!language)}
             >
-              <div className="w-5 h-5 bg-blue rounded-full pr-1"></div>
+              <div>
+              <div className="w-5 h-5 rounded-full mr-2 overflow-hidden">
+                <img className="h-10 bottom-2 w-30 relative" src="static/18165.jpg"/>
+              </div>
+              </div>
               <text className="text-[#ffff]">English</text>
               <div className="pl-1 text-selected">
-                <RiArrowDownSFill />
+                <RiArrowDownSFill className="h-6 w-6" />
               </div>
+              {language && (
+                <div className="z-50 absolute top-[60px] w-[100px] text-base text-[#ffff] bg-components rounded-xl shadow">
+                  <ul className="py-2" aria-labelledby="user-menu-button">
+                    <li>
+                      <a
+                        href="#"
+                        className="block px-4 py-2 text-sm hover:bg-gray-100 :text-gray-200"
+                      >
+                        Hindi
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              )}
             </div>
             <div
               className="hover:cursor-pointer flex items-center"
