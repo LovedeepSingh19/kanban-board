@@ -166,7 +166,7 @@ const ProgressComponent: React.FC<ProgressComponentProps> = () => {
               </div>
             </div>
           </div>
-          <div className="flex items-start flex-wrap justify-start pt-1 pl-2">
+          <div className="flex items-start flex-wrap justify-start pt-2 pl-2">
             <div className="text-[#ffff] pr-3 pt-1 text-xs">
               Total Progerss 60%
             </div>
