@@ -18,7 +18,14 @@ const Navbar: React.FC<NavbarProps> = ({ isOpen }) => {
     <>
       <header className={`bg-theme flex-wrap ${!isOpen ? "ml-10" : ""}`}>
         <div className=" flex flex-wrap items-center justify-between mx-auto xs:p-2 px-4 py-2">
-          <form className={`flex-grow max-w-sm`}>
+          <div
+            className={`${
+              isTabletMid ? "" : "hidden"
+            } text-[#ffff] text-[18px]`}
+          >
+            weFrameTech
+          </div>
+          <form className={`flex-grow max-w-sm ${isTabletMid ? "hidden" : ""}`}>
             <label
               htmlFor="default-search"
               className="mb-2 text-sm font-medium text-gray-900 sr-only "
@@ -33,15 +40,13 @@ const Navbar: React.FC<NavbarProps> = ({ isOpen }) => {
               </div>
               <input
                 type="search"
-                className=" bg-components font-normal items-center h-[50px] text-[14px] w-full pl-14 text-sm rounded-full bg-gray-50 "
+                className=" bg-components font-normal items-center h-[50px] text-[#ffff] text-[14px] w-full pl-14 text-sm rounded-full "
                 placeholder="Search here"
                 required
               />
             </div>
           </form>
-          <div
-            className={`ml-2 mr-2 hidden md:flex lg:flex hover:cursor-pointer`}
-          >
+          <div className={`ml-2 mr-2 hidden lg:flex hover:cursor-pointer`}>
             <p className="underline text-sm leading-5 text-right font-semibold text-selected">
               OTHER MENUS
             </p>
@@ -105,12 +110,12 @@ const Navbar: React.FC<NavbarProps> = ({ isOpen }) => {
                 <RiArrowDownSFill />
               </div>
             </div>
-            <div className="hover:cursor-pointer flex items-center" onClick={() => setModal(!modal)}>
+            <div
+              className="hover:cursor-pointer flex items-center"
+              onClick={() => setModal(!modal)}
+            >
               <div className="bg-[#a3a0b0] rounded-xl h-8 w-8 ml-2"></div>
-              <div
-                className={`m-2 flex-col ${isTabletMid ? "hidden" : ""}`}
-                id="user_details"
-              >
+              <div className={`m-2 flex-col`} id="user_details">
                 <p className="font-normal	text-sm leading-5 text-right text-[#ffffff]">
                   Instructor Day
                 </p>
@@ -122,21 +127,19 @@ const Navbar: React.FC<NavbarProps> = ({ isOpen }) => {
                 <RiArrowDownSFill />
               </div>
               {modal && (
-              <div
-                className="z-50 absolute top-[60px] w-[160px] right-7 text-base text-[#ffff] bg-components rounded-lg shadow"
-              >
-                <ul className="py-2" aria-labelledby="user-menu-button">
-                  <li>
-                    <a
-                      href="#"
-                      className="block px-4 py-2 text-sm hover:bg-gray-100 :text-gray-200"
-                    >
-                      Dashboard
-                    </a>
-                  </li>
-                </ul>
-              </div>
-            )}
+                <div className="z-50 absolute top-[60px] w-[160px] right-7 text-base text-[#ffff] bg-components rounded-lg shadow">
+                  <ul className="py-2" aria-labelledby="user-menu-button">
+                    <li>
+                      <a
+                        href="#"
+                        className="block px-4 py-2 text-sm hover:bg-gray-100 :text-gray-200"
+                      >
+                        Dashboard
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              )}
             </div>
           </div>
         </div>

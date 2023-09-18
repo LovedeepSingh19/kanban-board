@@ -2,14 +2,16 @@
 import React, { Dispatch, SetStateAction } from "react";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { MdEmail, MdOutlineKeyboardArrowRight, MdSpeed } from "react-icons/md";
-import { IoIosArrowDown, IoIosArrowDropright } from "react-icons/io";
+import { IoIosArrowDown, IoIosArrowDropright, IoIosBriefcase, IoIosNotifications } from "react-icons/io";
 import { IoChatbubblesSharp, IoSettings } from "react-icons/io5";
 import { HiMiniSquares2X2 } from "react-icons/hi2";
-import { RiContactsBook2Line } from "react-icons/ri";
+import { RiCheckboxMultipleFill, RiContactsBook2Line } from "react-icons/ri";
 import { GiShop } from "react-icons/gi";
 import { BiRightArrowAlt } from "react-icons/bi";
 import { FaFileInvoice } from "react-icons/fa";
 import { BsFillCalendarFill, BsPersonVideo3 } from "react-icons/bs";
+import { useMediaQuery } from "react-responsive";
+import { LiaSearchSolid } from "react-icons/lia";
 
 type SidebarProps = {
   open: boolean;
@@ -17,6 +19,8 @@ type SidebarProps = {
 };
 
 const Sidebar: React.FC<SidebarProps> = ({ open, setOpen }) => {
+  let isTabletMid = useMediaQuery({ query: "(max-width: 1000px)" });
+
   return (
     <>
       <div
@@ -24,7 +28,7 @@ const Sidebar: React.FC<SidebarProps> = ({ open, setOpen }) => {
           !open ? "w-[285px]" : "w-10"
         } bg-theme fixed block overflow-hidden`}
       >
-        <div className="pt-8 items-center justify-evenly flex text-[#ffff]">
+        <div className="pt-6 items-center justify-evenly flex text-[#ffff]">
           <div className={`${open ? "hidden" : ""} pl-2 text-[20px] `}>
             weFrameTech
           </div>
@@ -37,7 +41,80 @@ const Sidebar: React.FC<SidebarProps> = ({ open, setOpen }) => {
             <RxHamburgerMenu />
           </button>
         </div>
-        <div className="pt-10">
+        <div className={`${(isTabletMid && !open) ? "" : "hidden"} pt-4 pl-3 pr-3`}>
+
+        <form className={`flex-grow max-w-sm`}>
+            <label
+              htmlFor="default-search"
+              className="mb-2 text-sm font-medium text-gray-900 sr-only "
+            >
+              Search
+            </label>
+            <div className={`relative pl-2`}>
+              <div className="absolute inset-y-0 text-items text-2xl flex items-center pl-4 pointer-events-none">
+                <div className="w-5 h-6">
+                  <LiaSearchSolid />
+                </div>
+              </div>
+              <input
+                type="search"
+                className=" bg-components font-normal items-center h-[45px] text-[#ffff] text-[14px] w-full pl-14 text-sm rounded-full "
+                placeholder="Search here"
+                required
+              />
+            </div>
+          </form>
+<div className="flex justify-center items-center pt-5">
+          <div
+              className="justify-between flex items-center"
+              id="mobile-menu-2"
+            >
+              <ul className="flex flex-row rounded-lg md:space-x-9 md:mt-0 md:border-0 ">
+                <li>
+                  <div className="hover:cursor-pointer">
+                    <div className="h-4 w-4 mx-3 mb-2 absolute z-10 text-xs rounded-full bg-blue flex justify-center items-center align-baseline font-bold text-theme">
+                      <>12</>
+                    </div>
+                    <div className="w-5 h-6 hover:text-selected text-items text-2xl">
+                      <IoIosNotifications />
+                    </div>
+                  </div>
+                </li>
+                <li>
+                  <div className="hover:cursor-pointer">
+                    <div className="h-4 w-4 mx-3 mb-2 absolute z-10 text-xs rounded-full bg-blue flex justify-center items-center font-bold text-theme">
+                      <>5</>
+                    </div>
+                    <div className="w-5 h-6 hover:text-[#ffffff] text-[#464366] text-2xl">
+                      <BsPersonVideo3 />
+                    </div>
+                  </div>
+                </li>
+                <li>
+                  <div className="hover:cursor-pointer">
+                    <div className="h-4 w-4 mx-3 mb-2 absolute z-10 text-xs rounded-full bg-blue flex justify-center items-center align-baseline font-bold text-theme">
+                      <>2</>
+                    </div>
+                    <div className="w-5 h-6 hover:text-selected text-items text-2xl">
+                      <RiCheckboxMultipleFill />
+                    </div>
+                  </div>
+                </li>
+                <li>
+                  <div className="hover:cursor-pointer">
+                    <div className="h-4 w-4 mx-3 mb-2 absolute z-10 text-xs rounded-full bg-pink flex justify-center items-center align-baseline font-bold text-theme">
+                      <>!</>
+                    </div>
+                    <div className="w-5 h-6 hover:text-selected text-items text-2xl">
+                      <IoIosBriefcase />
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            </div>
+        </div>
+        <div className="pt-8">
           <text
             className={`text-[#ffffffc1] flex pl-8 ${open ? "hidden" : ""}`}
           >
@@ -50,7 +127,8 @@ const Sidebar: React.FC<SidebarProps> = ({ open, setOpen }) => {
               <MdSpeed className="text-2xl" />
               <text className={`${open ? "hidden" : ""} pl-4`}>dashboard</text>
             </div>
-            <div className="w-0"></div>
+            <div className={`${open ? "hidden" : ""} w-2`}></div>
+
           </div>
         </div>
         <div className="pt-5">
@@ -105,7 +183,7 @@ const Sidebar: React.FC<SidebarProps> = ({ open, setOpen }) => {
         <div className="pt-5">
           <div className="text-items hover:cursor-pointer flex items-center justify-around ">
             <div className="flex items-center">
-              <BsFillCalendarFill className="text-2xl" />
+              <BsFillCalendarFill className="text-xl" />
               <text className={`${open ? "hidden" : ""} pl-4 `}>Calender</text>
             </div>
             <div className={`${open ? "hidden" : ""} w-2`}></div>

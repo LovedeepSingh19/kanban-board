@@ -36,9 +36,7 @@ const KanbanCardComponent: React.FC<KanbanCardComponentProps> = (props) => {
     <Draggable draggableId={props.card.id} index={props.cardIndex}>
       {(provided) => (
         <div
-          className={`mb-3 pb-2 ${
-            props.isOpen ? "w-[315px]" : "w-[250px]"
-          } z-10 rounded-lg bg-components  shadow-sm transition-shadow duration-200 ease-in-out focus:outline-none focus:ring hover:shadow-lg hover:ring-0 text-[#aba8a8] hover:shadow-slate-800/60`}
+          className={`mb-3 pb-2 w-[315px] z-10 rounded-lg bg-components  shadow-sm transition-shadow duration-200 ease-in-out focus:outline-none focus:ring hover:shadow-lg hover:ring-0 text-[#aba8a8] hover:shadow-slate-800/60`}
           {...provided.draggableProps}
           {...provided.dragHandleProps}
           ref={provided.innerRef}
@@ -64,9 +62,9 @@ const KanbanCardComponent: React.FC<KanbanCardComponentProps> = (props) => {
           <div className="p-5">
             <div className="flex items-center justify-between gap-5">
               <div className="flex justify-evenly items-center">
-                <div className="w-1.5 h-1.5 ml-1 bg-pink rounded-full"></div>
+                <div className="w-1.5 h-1.5 ml-1 bg-green rounded-full"></div>
                 <span
-                  className={`text-pink flex-wrap ${
+                  className={`text-green flex-wrap ${
                     props.card.completed ? "w-[100px]" : "w-full"
                   } truncate text-sm font-medium pl-3`}
                 >
@@ -110,7 +108,7 @@ const KanbanCardComponent: React.FC<KanbanCardComponentProps> = (props) => {
                         style={{
                           width: `${calculateTaskPercentage()}%`,
                         }}
-                        className="flex h-6 items-center justify-center bg-[#0d8842] transition-transform duration-100 ease-in"
+                        className="flex h-6 items-center justify-center bg-green transition-transform duration-100 ease-in"
                       ></div>
                     )}
                   </div>

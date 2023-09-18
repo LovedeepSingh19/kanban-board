@@ -18,6 +18,7 @@ const config: Config = {
       'blue': '#5ECFFF',
       'pink': '#E328AF',
       'black': '#0D0B21',
+      'green': "#0d8842",
 
     },
     extend: {

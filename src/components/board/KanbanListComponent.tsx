@@ -124,7 +124,7 @@ const KanbanListComponent: React.FC<KanbanListComponentProps> = (props) => {
                     {props.list.cards.length == 0 && (
                       <div
                         className={`mb-3 ${
-                          props.isOpen ? "w-[320px]" : "w-[250px]"
+                          props.isOpen ? "w-[320px]" : "w-[300px]"
                         } z-10 rounded-lg bg-components shadow-sm transition-shadow duration-200 ease-in-out focus:outline-none focus:ring hover:shadow-lg hover:ring-0 text-[#aba8a8] hover:shadow-slate-800/60`}
                       >
                         <div className="p-4">
@@ -137,7 +137,7 @@ const KanbanListComponent: React.FC<KanbanListComponentProps> = (props) => {
                         </div>
                       </div>
                     )}
-                    {provided.placeholder}
+                    {/* {provided.placeholder} */}
                   </div>
                 </div>
               )}
