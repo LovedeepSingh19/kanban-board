@@ -11,7 +11,7 @@ const ProgressComponent: React.FC<ProgressComponentProps> = () => {
 
   return (
     <div className="p-6 pl-6 pr-6 ">
-      <div className="h-30 p-6 bg-theme rounded-md flex-col">
+      <div className="h-30 p-4 bg-theme rounded-md flex-col">
         <div className="flex items-start justify-between">
           <div className="flex items-center">
             <button className="pl-3 pr-3 hidden lg:flex text-[#ffffff88] text-2xl">
